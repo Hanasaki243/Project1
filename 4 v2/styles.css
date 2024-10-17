@@ -1,0 +1,493 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333; /* Changing text color to a dark gray for better readability */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    margin-bottom: 20px;
+}
+
+/* Header styles */
+header, .header, #header {
+    background-color: #111111 !important;
+    color: #ffffff !important;
+}
+
+/* Navbar styles */
+nav, .nav, .nav-menu, #nav {
+    background-color: #111111 !important;
+}
+
+/* Header content styles */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #111111 !important;
+}
+
+/* Logo styles - adjust as needed */
+.logo img {
+    max-height: 50px;
+    width: auto;
+}
+
+/* Navbar container */
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+/* Navbar list */
+.nav-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+/* Navbar items */
+.nav-menu ul li {
+    margin-left: 20px;
+}
+
+/* Navbar links */
+.nav-menu ul li a {
+    color: #0ab555;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: color 0.3s ease;
+    font-weight: 600;
+    font-size: 1.1em;
+    letter-spacing: 0.5px;
+}
+
+.nav-menu ul li a:hover {
+    color: #ffffff;
+    background-color: #222222;
+}
+
+/* Mobile menu toggle button */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #0ab555;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* For mobile menu */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -250px; /* Start off-screen */
+        width: 250px;
+        height: 100vh;
+        background-color: #111111;
+        transition: right 0.3s ease-in-out;
+        z-index: 1000;
+    }
+
+    .nav-menu.active {
+        right: 0; /* Slide in from the right */
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        padding-top: 60px; /* Space for close button */
+    }
+
+    .nav-menu ul li {
+        margin: 0;
+    }
+
+    .nav-menu ul li a {
+        padding: 15px 20px;
+        border-bottom: 1px solid #222222;
+    }
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('Assets/Images/paul-c-QA2v5i-8qmI-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #ff6600;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #e65c00;
+}
+
+/* Services Section */
+.services {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.service-item {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.service-item i {
+    font-size: 3em;
+    color: #ff6600;
+    margin-bottom: 20px;
+}
+
+/* About Section */
+.about {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.features {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.features li {
+    margin-bottom: 10px;
+}
+
+.features i {
+    color: #ff6600;
+    margin-right: 10px;
+}
+
+/* Gallery Section */
+.gallery {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.gallery-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.gallery-column {
+    flex: 1;
+    max-width: calc(50% - 10px);
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    margin-bottom: 40px;
+    overflow: hidden;
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel-container img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(10, 181, 85, 0.5);
+    color: #050705;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 10;
+}
+
+.carousel-button:hover {
+    background-color: rgba(10, 181, 85, 0.8);
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+.gallery h2, .gallery h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0ab555;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .gallery-wrapper {
+        flex-direction: column;
+    }
+
+    .gallery-column {
+        max-width: 100%;
+    }
+}
+
+/* Contact Section */
+.contact {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.contact-info div {
+    display: flex;
+    align-items: center;
+}
+
+.contact-info i {
+    font-size: 1.5em;
+    color: #ff6600;
+    margin-right: 10px;
+}
+
+form {
+    display: grid;
+    gap: 20px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form textarea {
+    height: 150px;
+}
+
+form input:disabled,
+form textarea:disabled,
+form button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.form-message {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.form-message.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.form-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #f9f9f9; /* Light gray background for footer */
+    color: #333;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: #0ab555;
+    font-size: 1.5em;
+    margin: 0 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+    }
+
+    nav ul {
+        margin-top: 20px;
+    }
+
+    .contact-info {
+        flex-direction: column;
+    }
+
+    .contact-info div {
+        margin-bottom: 20px;
+    }
+}
+
+/* Additional styles to ensure all text is the correct color */
+header, nav, footer {
+    background-color: #fff;
+    color: #333;
+}
+
+a {
+    color: #0ab555;
+}
+
+a:hover {
+    color: #08943f;
+}
+
+/* Update other section backgrounds if needed */
+.services, .about, .contact {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Update form input styles */
+input, textarea {
+    background-color: #f9f9f9; /* Light gray background for form fields */
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #999;
+}
+
+button {
+    background-color: #0ab555;
+    color: #fff;
+}
+
+button:hover {
+    background-color: #08943f;
+}
+
+/* Add this to your existing CSS */
+
+/* Icon styles */
+.fas, .fab, .far, .fa {
+    color: #0ab555;
+}
+
+/* If you're using SVG icons, you might need this */
+svg {
+    fill: #0ab555;
+}
+
+/* For specific icon usage, you might have classes like these */
+.icon, .social-icon {
+    color: #0ab555;
+}
+
+/* If you have any specific icon styles, update them as well */
+.service i, .contact-info i, .social-links i {
+    color: #0ab555;
+}
+
+/* Hover effect for icons, if desired */
+.fas:hover, .fab:hover, .far:hover, .fa:hover,
+.icon:hover, .social-icon:hover {
+    color: #08943f; /* A slightly darker shade for hover effect */
+}
+
+/* Optional: Add a subtle text shadow to enhance readability if needed */
+.nav-menu ul li a {
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.nav-menu {
+    transform: translateZ(0);
+}
+
+/* Hero button styles */
+.hero-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #0ab555; /* Green background to match your accent color */
+    color: #ffffff; /* White text for contrast */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    border: 2px solid #0ab555; /* Adding a border for more definition */
+}
+
+.hero-button:hover {
+    background-color: transparent; /* Transparent background on hover */
+    color: #0ab555; /* Green text on hover to match the border */
+}
+
+/* For mobile responsiveness */
+@media (max-width: 768px) {
+    .hero-button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+}
